@@ -14,4 +14,4 @@ e.g.
 
         ./fountain_read_features <something.osm.pbf>
 
-3) examine the output csv
+3) examine the output osm. TODO, output to a csv file
