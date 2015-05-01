@@ -1,0 +1,17 @@
+parse fountain data from osm
+============================
+
+1) download a planet file or subset.
+
+A managable source is the geofabrik region dumps:
+http://download.geofabrik.de/
+
+e.g.
+
+        wget http://download.geofabrik.de/africa-latest.osm.pbf
+
+2) run the extract script
+
+        ./fountain_read_features <something.osm.pbf>
+
+3) examine the output csv

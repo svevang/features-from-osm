@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+if [ -z $1 ]; then
+  echo "Usage:  $0 <path to file.pbf.osm> "
+  exit -1
+fi
+TARGET_FILE=$1
+BIN_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+OSMOSIS_BIN="osmosis/bin/osmosis"
+
+echo "launching osmosis.."
+
+$BIN_DIR/$OSMOSIS_BIN \
+  --read-pbf-fast $TARGET_FILE \
+  --tf reject-relations \
+  --tag-filter accept-nodes amenity=drinking_water \
+  --write-xml output.osm
+
