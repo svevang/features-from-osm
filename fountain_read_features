@@ -13,8 +13,7 @@ OSMOSIS_BIN="osmosis/bin/osmosis"
 echo "launching osmosis.."
 
 $BIN_DIR/$OSMOSIS_BIN \
-  --read-pbf-fast $TARGET_FILE \
-  --tf reject-relations \
+  --read-pbf $TARGET_FILE \
   --tag-filter accept-nodes amenity=drinking_water \
   --write-xml output.osm
 
