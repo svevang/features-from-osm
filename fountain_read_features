@@ -3,7 +3,9 @@
 set -e
 
 if [ -z $1 ]; then
-  echo "Usage:  $0 <path to file.pbf.osm> "
+  echo "find nodes in osm using the OR of node attributes"
+  echo "For instance, find neighborhoods OR water founters: "
+  echo "$0 <path to file.pbf.osm> place=neighborhood amenity=drinking_water"
   exit -1
 fi
 TARGET_FILE=$1
@@ -14,6 +16,6 @@ echo "launching osmosis.."
 
 $BIN_DIR/$OSMOSIS_BIN \
   --read-pbf $TARGET_FILE \
-  --tag-filter accept-nodes amenity=drinking_water \
+  --tag-filter accept-nodes "${@:3}" \
   --write-xml output.osm
 

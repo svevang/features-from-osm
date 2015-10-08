@@ -1,4 +1,4 @@
-parse fountain data from osm
+parse feature data from osm
 ============================
 
 1) download a planet file or subset.
@@ -10,8 +10,8 @@ e.g.
 
         wget http://download.geofabrik.de/africa-latest.osm.pbf
 
-2) run the extract script
+2) run the extract script to find neighborhoods or drinking fountains
 
-        ./fountain_read_features <something.osm.pbf>
+        ./read_features <something.osm.pbf> place=neighborhood amenity=drinking_water
 
-3) examine the output osm. TODO, output to a csv file
+3) examine the output osm.
